@@ -14,9 +14,9 @@ body {
 }
 /* 헤더 */
 .header{
-    background-color: yellow;
+    background-color: darkblue;
     height:10vh;
-    
+    padding: 0 50px;
 }
 /* 비주얼 */
 .visual{
@@ -27,22 +27,36 @@ body {
 /* 메인 콘텐츠 */
 .main{
     background-color: skyblue;
-    height:60vh;
+   /* height:60vh;
     display: flex;
-    flex-flow:row nowrap; /*콘텐츠 방향, 흐름*/
-    justify-content: flex-start;  /*메인 축*/
-    align-items: stretch; /*교차 축*/
+    flex-flow:row nowrap; 
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 28px 16px 36px;*/
 }
 
 .group{
     border:1px solid red;
 }
 
+.group1{
+    /* width:250px; */
+    float:left;
+}
+
+.group2{
+    /* width:380px; */
+}
+
+.group3{
+    /* width:190px; */
+}
+
 /* 슬로건 */
 .slogan{
     background-color: lime;
     height:10vh;
-    
+    clear: both;
 }
 /* 푸터 */
 .footer{

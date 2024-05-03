@@ -10,3 +10,15 @@
 - 선택자 그룹핑 (선택자, 선택자 ...)
 - 변수 (Custom Property) 
 - 플렉스박스 기초 
+
+###5월 3일
+
+- box-sizing
+- flex contatiner / flex items 속성 ...
+- justify-content 속성
+- oreder 속성
+- float / clear
+- display: flow-root
+- 레이아웃을 위해 margin 활용
+- 구조 선택자
+- float 요소 안에서 float 요소로 정의하기 ( order 속성 )
