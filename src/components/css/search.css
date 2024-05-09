@@ -1,0 +1,55 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+.search{
+  padding: 20px 30px;
+  border:1px solid #ddd;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0 ;
+  background-image: linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
+}
+
+.search-group{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 10px;
+
+  .form-input{
+    --spacing: 10px; 
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing);
+    
+    input{
+        flex-grow: 1;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        padding: 1px 1px 1px 8px;
+        height: 24px;
+        block-size: 24px;
+        width: 100%;
+    }
+
+  }
+  .button{
+    --bg-color:var(--orange-200);
+    --color: var(--white);
+    --radius:3px; 
+
+    border: 0;
+    padding: 16px 10px;
+    background-color: var(--bg-color);
+    color: var(--color);
+    border-radius: var(--radius);
+    white-space: nowrap;
+
+    &.search-button{
+      background-color: #000;
+      padding: 0 10px;
+    }
+  }
+  
+}

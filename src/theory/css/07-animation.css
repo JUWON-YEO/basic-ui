@@ -1,0 +1,31 @@
+@keyframes size{
+  0%{
+    width: 0;
+    inline-size: 0;
+  }
+  100%{
+    width: 500px;
+    inline-size: 500px
+  }
+}
+
+.box{
+  background: yellow;
+  overflow: hidden;
+  /* animation-name: size;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+  animation-direction: alternate;
+  animation-iteration-count: 2; */
+  animation: size 10s 2s forwards ease-in-out running alternate 2;
+}
+
+/*  애니메이션 동작을 줄이고자 사용자가 선택할 때 */
+@media (prefers-reduced-motion: reduce) {
+  .box{
+    animation: none;
+  }
+}

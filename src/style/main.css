@@ -1,69 +1,219 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
-:root{
-    --container-size:940px; 
+:root {
+  --container-size: 940px;
 }
 
+/* 기본 박스 사이징 설정 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* 그라디언트 배경, 배경 이미지 */
 body {
-    font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  line-height: 1.15;
+  font-family: "SUIT Variable", sans-serif;
+  background-color: #ccc;
+  background-image:  url(/images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
+  background-repeat: no-repeat;
+  background-position: 50% 0, 0 0;
 }
 
-.header, .visual, .main, .slogan, .footer-inner{
-    width: var(--container-size, 940px);
-    margin: 0 auto;
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
+  width: var(--container-size, 940px);
+  margin: 0 auto;
 }
+
 /* 헤더 */
-.header{
-    background-color: darkblue;
-    height:10vh;
-    padding: 0 50px;
+.header {
+  background-color: #fff;
+  height: 120px;
+  padding: 0 28px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
 }
-/* 비주얼 */
-.visual{
-    background-color: pink;
-    height:10vh;
+
+/* 로고 */
+.logo {
+  /* background-color: orange; */
+  position: absolute;
+  top: 45px;
+  left: 60px;
+  margin: 0;
+  font-size: 1em;
+
+  a, img{
+    display: block;
+    /* 인라인 상자 정렬 */
+    /* vertical-align: middle; */
+  }
+}
+
+/* 텍스트 링크 모음 */
+.member-service {
+  --spacing: 8px;
+  
+  translate: var(--spacing, 8px) 0;
+  font-size: 0;
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 0;
+  text-align: right;
+  
+  li {
+    display: inline-block;
+    margin: 0;
+    font-size: 0.875rem;
     
+    a {
+      display: inherit;
+      padding: 8px var(--spacing, 8px) 8px 4px;
+      font-variant: small-caps;
+      margin: 0;
+      text-transform: uppercase;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }
+
+
+
+/* 비주얼 */
+@keyframes moveEffect{
+  0%{
+    font-size: 12px;
+    translate: 0 0;
+
+  }
+  100%{
+    font-size: 24px;
+    translate: 320px 75px;
+  }
+}
+
+@keyframes fadeEffect{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.visual {
+  height: 120px;
+  block-size: 120px;
+  position: relative;
+
+}
+
+.visual::before, .visual::after{
+  animation-name: fadeEffect;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  content: "";
+  width: inherit;
+  inline-size: inherit;
+  height: inherit;
+  block-size: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+}
+.visual::before{
+  /* z-index: 1; */
+  background-image: url(/images/ani_flower_01.png), url(/images/ani_flower_02.png);
+  background-position: 0 -10px, 600px 10px;
+}
+
+.visual::after{
+  background-image: url(/images/ani_flower_03.png), url(/images/ani_flower_04.png);
+  background-position: 300px 0, 800px 30px;
+  animation-delay: 2000ms;
+}
+
+
+.visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: moveEffect;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+}
+
+
 /* 메인 콘텐츠 */
-.main{
-    background-color: skyblue;
-   /* height:60vh;
-    display: flex;
-    flex-flow:row nowrap; 
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 28px 16px 36px;*/
+.main {
+  background-color: #fff;
+  display: flow-root;
+  min-height: 450px;
+  padding: 28px 16px 36px;
 }
 
-.group{
-    border:1px solid red;
+.group {
+  border: 1px solid red;
+  float: left;
 }
 
-.group1{
-    /* width:250px; */
-    float:left;
+.group:nth-child(n + 2) {
+  margin-left: 44px;
 }
 
-.group2{
-    /* width:380px; */
+.group1 {
+  width: 250px;
+  /* background-color: orange; */
 }
 
-.group3{
-    /* width:190px; */
+.group2 {
+  width: 380px;
+  /* background: silver; */
+}
+
+.group3 {
+  /* background: hotpink; */
+  width: 190px;
 }
 
 /* 슬로건 */
-.slogan{
-    background-color: lime;
-    height:10vh;
-    clear: both;
+.slogan {
+  /* background-color: lime; */
+  height: 10vh;
+  clear: both;
 }
 /* 푸터 */
-.footer{
-    background-color: orange;
-    
+.footer {
+  /* background-color: orange; */
 }
-.footer-inner{
-    background-color: brown;
-    height:10vh;
+
+.footer-inner {
+  /* background: yellow; */
+  height: 10vh;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          flex를 지원하는 웹브라우저를 위한 스타일                   */
+/* -------------------------------------------------------------------------- */
+
+@supports (display: flex) {
+  .main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .group:nth-child(n + 2) {
+    margin-left: 0;
+  }
+
+  .group3 {
+    order: -1;
+  }
 }

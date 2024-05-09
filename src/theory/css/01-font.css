@@ -1,0 +1,40 @@
+/* 단위 */
+/* 절대단위 - px */
+/* 상대단위 - em (부모로 부터 상속) */
+/* 상대단위 - rem (html 요소를 기준으로 계산) */
+/* 상대단위 - vw (뷰포트를 기준으로 계산) */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "SUIT Variable", sans-serif;
+}
+
+h1 {
+  /* font-family: "SUIT Variable", sans-serif;
+  line-height: 1;
+  font-size: 60px;
+  font-weight: 100;
+  font-style: italic;
+  font-variant: small-caps; */
+  font: bold italic small-caps 60px /1 "SUIT Variable";
+}
+
+div {
+  font-size: 1.5em;
+}
+
+/* 1.5em - 상속된 글자 크기의 비계 */
+p {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* viewport 크기 */
+@media (max-width: 767px) {
+  p {
+    font-size: 3vw;
+  }
+}

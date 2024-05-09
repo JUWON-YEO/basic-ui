@@ -1,0 +1,17 @@
+.sr-only{
+  position: absolute;
+  /* 
+  width와 height 속성의 논리속성
+  inline-size: 1px;
+  block-size: 1px; 
+  */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0,0,0,0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}

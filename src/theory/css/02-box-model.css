@@ -1,0 +1,32 @@
+body {
+  font-size: 20px;
+}
+
+div {
+  border: 1px solid red;
+}
+
+[class^="box"] {
+  background: yellow;
+  padding: 20px;
+}
+
+.box1 {
+  width: 500px;
+  box-sizing: border-box;
+}
+
+.box2 {
+  width: 30em;
+  margin-bottom: 50px;
+}
+
+.box3 {
+  width: 25rem;
+  margin-top: 100px;
+}
+
+.box4 {
+  inline-size: 50vw;
+  margin: 0 auto;
+}
