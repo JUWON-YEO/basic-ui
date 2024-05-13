@@ -1,12 +1,20 @@
 :root{
-    --base-font-family: "SUIT Variable", sans-serif; 
-  }
-  
-  body *, body *::before, body *::after{
-     box-sizing: border-box; 
-  }
-  
-  body{
-    font-family: var(--base-font-family);
-    line-height: 1.15;
-  }
+  --base-font-family: "SUIT Variable", sans-serif; 
+}
+
+body *, body *::before, body *::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--base-font-family);
+  line-height: 1.15;
+}
+
+/* *:focus{
+  outline: 0;
+}
+
+*:focus-visible{
+  outline: 2px solid green;
+} */

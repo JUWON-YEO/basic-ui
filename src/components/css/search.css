@@ -2,54 +2,89 @@
 @import url(/style/theme.css);
 @import url(/style/base.css);
 
-.search{
-  padding: 20px 30px;
-  border:1px solid #ddd;
-  border-bottom: 0;
-  border-radius: 5px 5px 0 0 ;
-  background-image: linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
-}
 
-.search-group{
+/* input 컴포넌트*/
+.form-input{
+  --spacing: 10px;
+  --border-color: var(--gray-500);
+  --radius: 3px;
+  border-bottom: 1px solid #fff;
+
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  gap: var(--spacing);
+  align-items: center;
+
+  label{
+    white-space: nowrap;
+  }
+
+  input{
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1px 1px 1px 8px;
+    height: 24px;
+    block-size: 24px;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: 0;
+  }
+  
+  &:focus-within{
+    border-bottom-color: red;
+  }
+}
+
+/* button 컴포넌트 */
+.button{
+  --bg-color:var(--orange-200);
+  --color: var(--white);
+  --radius: 3px;
+
+  border: 0;
+  padding: 16px 10px;
+  background-color: var(--bg-color);
+  color: var(--color);
+  border-radius: var(--radius);
+  white-space: nowrap;
+
+  &.search-button{
+    background-color: #000;
+    padding: 0 10px;
+  }
+}
+
+/* 검색 폼 레이아웃 스타일링 */
+.search-group{
+  background: yellow;
+  margin: 50px;
+  background-image: linear-gradient(to bottom, #ccc, #fff);
+  border: 1px solid #aaa;
+  border-bottom-color: #fff;
+  padding: 15px 25px 10px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  flex-flow: row nowrap;
   gap: 10px;
 
   .form-input{
-    --spacing: 10px; 
-
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--spacing);
-    
-    input{
-        flex-grow: 1;
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        padding: 1px 1px 1px 8px;
-        height: 24px;
-        block-size: 24px;
-        width: 100%;
-    }
-
+    flex-grow: 1;
   }
-  .button{
-    --bg-color:var(--orange-200);
-    --color: var(--white);
-    --radius:3px; 
 
-    border: 0;
-    padding: 16px 10px;
-    background-color: var(--bg-color);
-    color: var(--color);
-    border-radius: var(--radius);
-    white-space: nowrap;
-
-    &.search-button{
-      background-color: #000;
-      padding: 0 10px;
-    }
+  [class*="fab"]{
+    padding-right: 0.25em;
+    padding-inline-end: 0.25em;
   }
-  
+
+  input, button{
+    height: 30px;
+    block-size: 30px;
+  }
+
+  button{
+    font-size: 0.875rem;
+  }
 }

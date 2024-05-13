@@ -1,0 +1,78 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+/* 탭 컴포넌트 */
+
+body, h1 {
+  margin: 20px;
+}
+
+
+.tabs{
+  width: 50%;
+  inline-size: 50%;
+  position: relative;
+
+}
+
+/* 탭 컴포넌트 */
+.tab{
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  color: gray;
+  background-color: #eee;
+  
+  &.is-selected{
+    border-color: currentColor currentColor white currentColor;
+    color: orangered;
+    background-color: white;
+  }
+}
+
+/* 탭 컴포넌트 그룹 */
+.tab-list{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* 탭 패널, 탭 패널 아이템 */
+.tab-panel{
+  padding-top: 1.5rem;
+  padding-block-start: 1.5rem;
+  display: none;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+
+  &.is-selected{
+    display: flex;
+  }
+
+  .tab-panel-item{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    a{
+      flex: 1 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    span{
+      flex: 0 0 auto;
+    } 
+  }
+
+  .tab-more{
+    position: absolute;
+    top: 0;
+    inset-block-start: 0;
+    right: 0;
+    inset-inline-end: 0;
+  }
+}

@@ -4,123 +4,136 @@
 
 /* input 컴포넌트 */
 .form-input{
-    --spacing: 10px; 
+  --spacing: 10px;
+  --border-color: var(--gray-500);
+  --radius: 3px;
+  border-bottom: 1px solid #fff;
 
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--spacing);
-    
-    input{
-        flex-grow: 1;
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        padding: 1px 1px 1px 8px;
-        height: 24px;
-        block-size: 24px;
-        width: 100%;
-    }
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--spacing);
+  align-items: center;
 
-}
+  label{
+    white-space: nowrap;
+  }
 
-.button{
+  input{
+    flex-grow: 1;
+    /* border: 1px solid var(--border-color); */
     border: 0;
-    padding: 16px 10px;
-    background-color: ver(--bg-color);
+    border-radius: var(--radius);
+    padding: 1px 1px 1px 8px;
+    height: 24px;
+    block-size: 24px;
+    width: 100%;
+  }
 
-    &:focus{
-        outline: 0;
-    }
-    &:focus-visible{
-        outline: 2px solid #green
-    }
-   
-
+  input:focus {
+    outline: 0;
+  }
+  
+  &:focus-within{
+    border-bottom-color: red;
+  }
 }
+
+
+
+/* button 컴포넌트 */
+.button{
+  --bg-color:var(--orange-200);
+  --color: var(--white);
+  --radius: 3px;
+
+  border: 0;
+  padding: 16px 10px;
+  background-color: var(--bg-color);
+  color: var(--color);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+
+
+/* 링크 텍스트 컴포넌트 (아이콘 유형) */
+.icon-link{
+  --color: var(--orange-200);
+
+  [class*='fas']{
+    color: var(--color);
+    padding-right: 0.25em;
+    padding-inline-end: 0.25em;
+  }
+}
+
+
 /* 로그인 */
 .login{
-    --box-start-color: var(--orange-100);
-    --box-end-color: var(--orange-200);
-    --box-shadow-color: var(--gray-700);
+  /* 로그인 변수 */
+  --start-color: var(--orange-100);
+  --end-color: var(--orange-200);
+  --shadow-color: var(--gray-700);
+  --spacing: 10px;
+  --radius: 5px;
+  --shadow-depth: 5px;
+  --bg-color: var(--white);
+  --border-color: var(--gray-500);
 
-    background-image: radial-gradient(circle at right top, var(--box-start-color), var(--box-end-color));
-    border-radius: 5px;
-    padding: 12px;
-    box-shadow: 5px 5px 0 0 var(--box-shadow-color);
+  background-image: radial-gradient(circle at right top, var(--start-color,), var(--end-color));
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: var(--shadow-depth) var(--shadow-depth) 0 0 var(--shadow-color);
 
-    .login-title{
-        --color: var(--yellow);
-        color : var(--color);
-        margin: 0;
-        font-size: 0.9375rem;
-    }
-
-    .login-form{
-        background-color: #fff;
-        border-radius: 5px 5px 0 0;
-        margin-top: 20px;
-        padding: 10px;
-
-        fieldset{
-            border: 0;
-            padding: 0;
-            margin: 0;
-            position: relative;
-            height:70px;
-            border-bottom:1px solid #ccc;
-
-            div{
-                margin-bottom: 5px;
-            }
-
-            label{
-                display: inline-block;
-                width: 4em;
-                inline-size: 4em;
-            }
-
-            input{
-                width: calc(100% - 145px);
-                border:1px solid #aaa;
-                border-radius: 3px;
-                padding: 1px 1px 1px 8px;
-                height:24px;
-            }
-        }
-
-        
-    }
-    .login-button{
-        border: 0;
-        padding: 16px 10px;
-        background-color: var(--orange-200);
-        color: #fff;
-        border-radius: 5px;
-        position: absolute;
-        right: 0;
-        inset-inline-end: 0;
-        top: 0;
-        inset-block-start: 0;
-    }
-    
-    .member-sign{
-        background-color: #fff;
-        margin: 0;
-        list-style: none;
-        padding: 10px;
-        border-radius: 0 0 5px 5px;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-
-        li{
-
-            a{
-                text-decoration: none;
-                color: inherit;
-            }
-        }
-    }
-
-
-
+/* 로그인 제목 */
+.login-title{
+  --color: var(--yellow);
+  
+  color: var(--color);
+  margin: 0;
+  font-size: 0.9375rem;
 }
+
+/* 로그인 폼 */
+.login-form{
+  margin-top: var(--spacing);
+  margin-block-start: var(--spacing);
+  background-color: var(--bg-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: var(--spacing);
+
+    fieldset{
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-flow: row nowrap;
+      gap: var(--spacing);
+      padding-bottom: var(--spacing);
+      padding-block-end: var(--spacing);
+    }
+
+    .login-input-group{
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--spacing);
+
+      label{
+        min-width: 4em;
+        min-inline-size: 4em;
+      }
+    }
+  } 
+
+  /* 멤버 서비스 관련 링크 */
+  .member-sign{
+    background-color: var(--bg-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 0 var(--spacing) var(--spacing) var(--spacing);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+}
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>페이지네이션</title>
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/components/css/pagination.css" />
+    <script type="module" src="/components/js/pagination.js"></script>
+  </head>
+  <body>
+    <h1>페이지네이션</h1>
+    
+    <!-- 페이지네이션 컴포넌트 -->
+    <!-- 시맨틱 요소 -->
+    <!-- <nav class="pagination" aria-label="페이지네이션">
+      <button type="button" aria-label="이전 페이지"><span class="fas fa-angle-left" aria-hidden="true"></span></button>
+      <ol role="none">
+        <li><a href="/">1</a></li>
+        <li><a href="/">2</a></li>
+        <li><a href="/" class="is-selected" aria-current="page">3</a></li>
+        <li><a href="/">4</a></li>
+        <li><a href="/">5</a></li>
+      </ol>
+      <button type="button" aria-label="다음 페이지"><span class="fas fa-angle-right" aria-hidden="true"></span></button>
+    </nav> -->
+
+    <!-- div 요소 -->
+    <div class="pagination" role="navigation" aria-label="페이지네이션">
+      <button class="button button-prev" type="button" aria-label="이전 페이지"><span class="fas fa-angle-left" aria-hidden="true"></span></button>
+      <div>
+        <a href="/">1</a>
+        <a href="/">2</a>
+        <a href="/" class="is-selected" aria-current="page">3</a>
+        <a href="/">4</a>
+        <a href="/">5</a>
+      </div>
+      <button class="button button-next" type="button" aria-label="다음 페이지"><span class="fas fa-angle-right" aria-hidden="true"></span></button>
+    </div>
+  </body>
+</html>

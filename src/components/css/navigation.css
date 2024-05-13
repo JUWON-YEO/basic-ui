@@ -1,0 +1,108 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+body{
+  margin: 50px;
+}
+
+.header{
+  position: relative;
+}
+
+.logo{
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+
+
+.menu{
+  background:orangered linear-gradient(to bottom, orange, orangered, orange);
+  box-shadow: 0 -5px 0 0 #121212;
+  color: #000;
+  display: flow-root;
+  padding-left: 225px;
+  padding-inline-start: 225px;
+  
+  > li{
+    float: left;
+    border-left: 2px solid #fff;
+    position: relative;
+  }
+
+  > li:nth-child(-n + 3) ul{
+    left: 0;
+  }
+
+  > li:nth-child(n + 4) ul{
+    right: 0;
+  }
+
+
+
+
+  .is--active{
+    button{
+      color: yellow;
+      
+      &::after{
+        content: "";
+        background: #000;
+        display: block;
+        height: 1px;
+        block-size: 1px;
+      }
+    }
+
+    ul{
+      display: flex;
+    }
+  }
+
+  button{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 24px;
+    height: 60px;
+    block-size: 60px;
+    line-height: 60px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000 , -1px -1px 0 #000;
+
+    span{
+      display: block;
+    }
+  }
+
+  /* button[aria-expanded="true"]{
+    color: lime;
+  } */
+
+  ul{
+    display: none;
+    position: absolute;
+    top: 65px;
+
+    li{
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 4px;
+      margin-inline-end: 4px;
+    }
+
+    a{
+      display: flex;
+      padding: 8px;
+      gap: 8px;
+    }
+  }
+
+
+  /* ul[aria-hidden="false"]{
+    display: block;
+  } */
+
+}

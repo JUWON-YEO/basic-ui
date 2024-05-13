@@ -40,3 +40,7 @@
     inline-size: 120px;
     display: block;
   }
+
+  h1 + div{
+    background: yellow;
+  }

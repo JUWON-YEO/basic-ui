@@ -1,0 +1,33 @@
+.box1 {
+  background-color: yellow;
+  border: 1px solid red;
+  width: 500px;
+  height: 100px;
+  position: relative;
+  /* z-index: 3; */
+}
+.box2 {
+  background-color: pink;
+  border: 1px solid blue;
+  width: 500px;
+  height: 100px;
+  position: relative;
+  top: 50px;
+  left: 20px;
+  z-index: 10;
+}
+.box3 {
+  background-color: salmon;
+  border: 1px solid green;
+  width: 500px;
+  height: 100px;
+  /* position: relative;
+  top: -150px; */
+  /* z-index: 6; */
+}
+
+.box-inner1{
+  background: red;
+  position: relative;
+  z-index: 20;
+}

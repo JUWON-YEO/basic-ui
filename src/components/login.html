@@ -4,40 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인 폼 예제</title>
-    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="/components/css/login.css" />
   </head>
   <body>
     <h1>로그인 폼 예제</h1>
-    
-    <section class="login">
-        <h2 class="login-title">로그인</h2>
-        <form action="/" class="login-form">
-            <fieldset>
-               <legend class="sr-only">회원 로그인 폼</legend>
-               <div class="login-input-group"> 
-                    <!--아이디 입력 서식-->
-                    <div role="group" class="form-input">
-                        <label for="uesrEmail">아이디</label>
-                        <input type="email" id="uesrEmail" required placeholder="guset@euid.dev" name="userEmail" /> 
-                    </div>
-                    <!--비밀번호 입력 서식-->
-                    <div role="group" class="form-input">
-                        <label for="uesrPwd">비밀번호</label>
-                        <input type="password" id="uesrPwd" required placeholder="8자리 이상" name="uesrPwd" /> 
-                    </div>
-                </div>
-                <button type="submit" class="login-button button">로그인</button>
-            </fieldset>
-        </form>
-        <ul class="member-sign">
-            <li><a href="/"><span class="fas fa-angle-right" aria-hidden="true"></span>회원가입</a></li>
-            <li><a href="/"><span class="fas fa-angle-right" aria-hidden="true"></span>아이디/비밀번호 찾기</a></li>
-        </ul>
-    </section>
-  </body>
 
+    <section class="login">
+      <h2 class="login-title">로그인</h2>
+      <form action="/" class="login-form">
+        <fieldset>
+          <legend class="sr-only">회원 로그인 폼</legend>
+          <!-- 아이디 입력 서식 -->
+
+          <div class="login-input-group">
+            <div role="group" class="form-input">
+              <label for="userEmail">아이디</label>
+              <input type="email" id="userEmail" required placeholder="guest@euid.dev" name="userEmail" />
+            </div>
+            <!-- 비밀번호 입력 서식 -->
+            <div role="group" class="form-input">
+              <label for="userPwd">비밀번호</label>
+              <input type="password" id="userPwd" required placeholder="8자리 이상" name="userPwd" />
+            </div>
+          </div>
+
+          <button type="button" class="login-button button">로그인</button>
+        </fieldset>
+      </form>
+      <ul class="member-sign">
+        <li><a href="/" class="icon-link"><span class="fas fa-angle-right" aria-hidden="true"></span>회원가입</a></li>
+        <li><a href="/" class="icon-link"><span class="fas fa-angle-right" aria-hidden="true"></span>아이디/비밀번호 찾기</a></li>
+      </ul> 
+    </section>
+
+
+  </body>
 </html>
